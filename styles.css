@@ -21,7 +21,7 @@
 
 body {
   display: flex;
-  background-color: #f8f8f8;
+  background-color: #fff;
   font-family: 'TTLakes', sans-serif;
   color: #1B1C21;
   font-size: 14px;
@@ -31,14 +31,15 @@ body {
 .main {
   flex-direction: column;
   background-color: #f8f8f8;
-  position: absolute;
-  top: 88px;
-  left: 0;
-  padding: 0;
+  box-sizing: content-box;
 }
 
 .main>.view-lg>h1>img {
   margin-right: 12px;
+}
+
+.slider__menu {
+  flex-wrap: wrap;
 }
 
 .slider>ul {
@@ -47,32 +48,36 @@ body {
   flex-direction: row;
   margin-bottom: 0;
   overflow-x:hidden;
+  flex-wrap: nowrap;
 }
 
-.slider__label > a {
+.slider__label > button {
   text-decoration-line: none;
   color: #7E7E82;
+  background-color: inherit;
+  border: none;
+  box-sizing: content-box;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .slider__label {
   display: flex;
   color: #7E7E82;
   align-items: center;
-  font-size: 16px;
   line-height: 24px;
   white-space: nowrap;
-  margin-top: 14px;
-  margin-bottom: 10px;
+  margin-top: 22px;
+  margin-bottom: 12px;
   padding: 0 16px;
-  height: 38px;
-  overflow-x: hidden;
+  height: 18px;
 }
 
 .slider__label[selected] {
   background: #FFFFFF;
   border: 2px solid #B8FFEC;
   border-radius: 6px;
-  margin-top: 12px;
+  margin-top: 10px;
   height: 36px;
 }
 
@@ -105,7 +110,7 @@ img {
   justify-content: flex-start;
   align-items: center;
   line-height: 18px;
-  margin: 0 0 20px 12px;
+  margin: 0 0 0 12px;
   font-size: 16px;
 }
 
@@ -130,13 +135,6 @@ img {
 
 @media (max-width: 767px) {
 
-  .header {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-  }
-
   .header__container {
     display: flex;
     height: 88px;
@@ -155,7 +153,7 @@ img {
     display: flex;
     flex-direction: row;
     position: absolute;
-    right: 0;
+    right: 10px;
   }
 
   .menu__item-md {
@@ -178,7 +176,8 @@ img {
     text-shadow: 0.3px 0.3px 1px black;
     height: 40px;
     font-size: 28px;
-    margin: 24px 0 0 0;
+    margin: 0;
+    padding-top: 22px;
     width: auto;
     align-items: center;
     letter-spacing: -0.6px;
@@ -214,16 +213,11 @@ img {
 }
 
 @media (min-width: 767px) and (max-width: 1000px) {
-  .header {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-  }
 
   .header__container {
+    margin-top: 10px;
     display: flex;
-    height: 88px;
+    height: 48px;
     background-color: white;
   }
 
@@ -234,13 +228,14 @@ img {
   .menu__item-md>ul {
     display: flex;
     flex-direction: row;
+    right: 10px;
     position: absolute;
-    right: 0;
   }
 
   .menu__item-md {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .menu__item {
@@ -273,13 +268,18 @@ img {
     overflow: hidden;
   }
 
+  .main>.view-lg>h1>img {
+    margin-right: 20px;
+  }
+
   .main>.view-lg>h1 {
     display: flex;
     font-weight: 700;
     text-shadow: 0.3px 0.3px 1px black;
     height: 40px;
     font-size: 28px;
-    margin: 24px 0 0 0;
+    margin-top: 24px;
+    padding-top: 24px;
     width: auto;
     align-items: center;
     letter-spacing: -0.6px;
@@ -287,13 +287,13 @@ img {
 
   .slider__label {
     margin-top: 20px;
-    margin-bottom: 24px;
-    height: 38px;
+    margin-bottom: 28px;
+    height: 28px;
   }
 
   .slider__label[selected] {
-    margin-top: 18px;
-    margin-bottom: 20px;
+    margin-top: 16px;
+    margin-bottom: 10px;
     height: 36px;
   }
 
@@ -315,11 +315,13 @@ img {
     width: 312px;
     margin-left: 24px;
     margin-top: 12px;
+    margin-bottom: 18px;
     line-height: 20px;
   }
 
   .read__more {
-    margin-left: 12px ;
+    margin-left: 12px;
+    padding-bottom: 16px;
   }
 
   .content__logo {
@@ -329,28 +331,41 @@ img {
   }
 }
 
-@media (min-width: 1001px) {
-  .menu__item-md>ul {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    right: 0;
+@media (min-width: 1120px) {
+
+  body {
+    background-color: #f8f8f8;
+  }
+
+  main {
+    margin-top: 16px;
   }
 
   .menu__button {
     display: flex;
   }
 
+  .view-lg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu__item-lg>ul {
+    display: flex;
+  }
+
   .menu__item {
     display: flex;
-    position: absolute;
-    right: 0;
+    flex-direction: row;
+    justify-content: space-between;
     list-style: none;
-    align-items: center;
   }
 
   .menu__button>span {
     margin-right: 8px;
+    font-size: 16px;
   }
 
   .menu__item-md,
@@ -371,69 +386,54 @@ img {
     overflow: hidden;
   }
 
-  .main {
-    top: 20px;
-  }
-
   .main>.view-lg>h1 {
     display: flex;
     font-weight: 700;
     text-shadow: 0.3px 0.3px 1px black;
     height: 40px;
     font-size: 28px;
+    margin-bottom: 12px;
     width: auto;
-    align-items: center;
+    align-items: center ;
     letter-spacing: -0.6px;
   }
 
-  .view-lg {
-    display: flex;
-  }
-
-  .menu__item-lg>ul>li {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .repair {
-    margin-right: 160px;
-  }
-
-
-  .slider__menu {
-    flex-wrap: wrap;
+  .slider>ul {
+    margin-top: 0;
   }
 
   .slider__label {
-    margin-top: 14px;
+    margin-top: 12px;
     margin-bottom: 10px;
     height: 18px;
-    overflow: visible;
   }
 
   .slider__label[selected] {
-    margin-top: 1px;
+    margin-top: 0;
     margin-bottom: 1px;
-    line-height: 40px;
+  }
+
+  .slider>ul {
+    flex-wrap: wrap;
   }
 
   .content {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-top: 10px;
   }
 
   .content__text>p {
-    height: auto;
     width: 490px;
     margin-left: 24px;
     margin-top: 6px;
+    margin-bottom: 2px;
     line-height: 20px;
   }
 
-  .read__more {
-    margin-left: 12px;
+  .content__text>p:last-of-type {
+    margin-top: -14px;
   }
 
   .content__logo {
@@ -443,6 +443,10 @@ img {
     margin-left: 48px;
     border-radius: 6px;
     justify-self: flex-end;
+  }
+
+  .read__more {
+    margin-left: 12px;
   }
 }
 
