@@ -218,6 +218,10 @@ img {
     margin-left: 6px;
   }
 
+  .readMore__header {
+    margin-left: 6px;
+  }
+
   .content__logo {
     width: 320px;
     height: 176px;
@@ -332,9 +336,13 @@ img {
     padding-bottom: 16px;
   }
 
+  .readMore__header {
+    margin-left: 12px;
+  }
+
   .readMore__content {
     max-width: 312px;
-    margin-left: 10px;
+    margin-left: 12px;
   }
 
   .content__logo {
@@ -448,6 +456,10 @@ img {
     margin-top: 6px;
     margin-bottom: 2px;
     line-height: 20px;
+  }
+
+  .readMore__header {
+    margin-left: 12px;
   }
 
   .readMore__content {
